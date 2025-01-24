@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Art Therapy App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+
+        #p5-canvas-container {
+            width: 50%;
+            height: 100%;
+        }
+
+        #three-canvas-container {
+            width: 50%;
+            height: 100%;
+        }
+
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="controls">
+        <label for="brush-size">Brush Size:</label>
+        <input id="brush-size" type="range" min="1" max="100" value="5">
+        <br>
+        <label for="brush-color">Brush Color:</label>
+        <input id="brush-color" type="color" value="#000000">
+        <br>
+        <button id="eraser-toggle">Toggle Eraser</button>
+        <br>
+        <label for="eraser-size">Eraser Size:</label>
+        <input id="eraser-size" type="range" min="1" max="100" value="20">
+    </div>
+    <div id="container">
+        <div id="p5-canvas-container"></div>
+        <div id="three-canvas-container">
+            <canvas id="three-canvas"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
